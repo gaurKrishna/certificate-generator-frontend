@@ -340,9 +340,9 @@ class Generate extends React.Component {
             <input type="text" name="event" required />
           </div>
           <div>
-            <label>Year:</label>
+            <label>Year (e.g. 2022-23):</label>
             <br />
-            <input type="text" name="year" required />
+            <input type="text" name="year" pattern="[0-9]{4}-[0-9]{2}" required />
           </div>
           <div>
             <label>CSV:</label>

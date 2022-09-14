@@ -3,6 +3,29 @@ import { Nav, Navbar } from 'react-bootstrap';
 import logo from '../assets/logo.jpg';
 
 class Navigation extends React.Component {
+  logout_handler = async(e) => {
+    e.preventDefault()
+    const token = localStorage.getItem("token")
+    console.log(token)
+    try {
+      const res = await fetch('https://cert-iiit.ml/logout', {
+        method: 'POST',
+        body: JSON.stringify({token: token.toString()}),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8'
+        }
+      });
+      if (res.status !== 200) throw new Error('Exception message');
+      localStorage.removeItem("token")
+      localStorage.removeItem("time")
+      window.location.href = '/login'
+    }
+    catch (e){
+      console.log(e);
+    }
+
+  };
+
   render() {
     return (
       <Navbar bg="light" expand="lg">
@@ -27,6 +50,10 @@ class Navigation extends React.Component {
               <Nav.Link href="/generate">Generate Certificates</Nav.Link>
             ) : null}
             <Nav.Link href="/verify">Verify Certificates</Nav.Link>
+            {this.props.islogedIn? (
+              <Nav.Link onClick={this.logout_handler}>Logout</Nav.Link>
+            ) : null}
+            
           </Nav>
         </Navbar.Collapse>
       </Navbar>

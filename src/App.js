@@ -29,12 +29,19 @@ class App extends React.Component {
 
   componentDidMount() {
     const loginToken = localStorage.getItem('token') ?? null;
-    const time = localStorage.getItem('time') | '';
+    const time = localStorage.getItem('time') ?? null;
+    console.log("Component Did mount", time)
     if (loginToken === null) {
       this.setState({
         islogedIn: false,
       });
-    } else if (time < Date.now()) this.setState({ loginToken, islogedIn: true });
+    }else if(time === null){
+      this.setState({
+        islogedIn: false,
+      });
+    }else if (time < Date.now()){ 
+        this.setState({ loginToken, islogedIn: true });
+      }  
   }
 
   handler(token, cTime) {
@@ -52,7 +59,10 @@ class App extends React.Component {
         ? localStorage.getItem('token')
         : '';
       const time = localStorage.getItem('time') | '';
-      if (!!token && time < Date.now()) return true;
+      console.log(token, time)
+      console.log(!!time)
+      if (!!token && !!time && time < Date.now()) return true;
+      console.log("here")
       return false;
     };
 
