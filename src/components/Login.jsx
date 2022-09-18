@@ -19,7 +19,7 @@ const Login = (props) => {
           event.preventDefault();
           let formdata = new FormData(event.target);
           try {
-            const res = await fetch('https://cert-iiit.ml/login', {
+            const res = await fetch('https://mycertificatesgymkhana.iiitvadodara.ac.in/api/login', {
               method: 'POST',
               body: formdata,
             });

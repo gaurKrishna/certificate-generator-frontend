@@ -255,7 +255,7 @@ class Generate extends React.Component {
       uploadData.append('id', this.state.certID);
       uploadData.append('zip', content);
       uploadData.append('token', token);
-      await fetch('https://cert-iiit.ml/upload', {
+      await fetch('https://mycertificatesgymkhana.iiitvadodara.ac.in/api/upload', {
         method: 'POST',
         body: uploadData,
       }).then(() => this.props.history.push('/'));
@@ -290,7 +290,7 @@ class Generate extends React.Component {
             setTimeout(async () => {
               if (this.state.isImageUploadable) {
                 try {
-                  const res = await fetch('https://cert-iiit.ml/generate', {
+                  const res = await fetch('https://mycertificatesgymkhana.iiitvadodara.ac.in/api/generate', {
                     method: 'POST',
                     body: formdata,
                   });

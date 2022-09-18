@@ -8,7 +8,7 @@ class Navigation extends React.Component {
     const token = localStorage.getItem("token")
     console.log(token)
     try {
-      const res = await fetch('https://cert-iiit.ml/logout', {
+      const res = await fetch('https://mycertificatesgymkhana.iiitvadodara.ac.in/api/logout', {
         method: 'POST',
         body: JSON.stringify({token: token.toString()}),
         headers: {
