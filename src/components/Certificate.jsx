@@ -22,7 +22,7 @@ const Certificate = ({ match, location }) => {
     const fetchData = async () => {
       const test = new FormData();
       test.append('id', match.params.id.split('-').join('/').split('_').join('-'));
-      const res = await fetch('https://mycertificatesgymkhana.iiitvadodara.ac.in/api/get', {
+      const res = await fetch('10.100.5.78:8000/api/get', {
         method: 'POST',
         body: test,
       });

@@ -19,7 +19,7 @@ const Login = (props) => {
           event.preventDefault();
           let formdata = new FormData(event.target);
           try {
-            const res = await fetch('https://mycertificatesgymkhana.iiitvadodara.ac.in/api/login', {
+            const res = await fetch('10.100.5.78:8000/api/login', {
               method: 'POST',
               body: formdata,
             });

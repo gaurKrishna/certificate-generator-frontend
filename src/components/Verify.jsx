@@ -117,7 +117,7 @@ export class Verify extends Component {
                         'id',
                         `${event.target[0].value.toString().trim()}`
                       );
-                      const res = await fetch('https://mycertificatesgymkhana.iiitvadodara.ac.in/api/get', {
+                      const res = await fetch('10.100.5.78:8000/api/get', {
                         method: 'POST',
                         body: test,
                       });
