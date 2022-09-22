@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   Footer,
@@ -70,7 +70,7 @@ class App extends React.Component {
       <>
         <Navigation islogedIn={this.state.islogedIn} />
         <BrowserRouter>
-          <Routes>
+          <Switch>
             <Route path="/generate">
               {x() === false ? (
                 <Redirect to="/login" />
@@ -88,7 +88,7 @@ class App extends React.Component {
               <Login handler={this.handler} islogedIn={this.state.islogedIn} />
             </Route>
             <Route path="/" exact component={() => <Home />} />
-          </Routes>
+          </Switch>
         </BrowserRouter>
         <Footer />
       </>
