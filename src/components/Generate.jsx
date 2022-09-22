@@ -255,7 +255,7 @@ class Generate extends React.Component {
       uploadData.append('id', this.state.certID);
       uploadData.append('zip', content);
       uploadData.append('token', token);
-      await fetch('10.100.5.78:8000/api/upload', {
+      await fetch(process.env.REACT_APP_BASE_URL + 'upload', {
         method: 'POST',
         body: uploadData,
       }).then(() => this.props.history.push('/'));
@@ -290,7 +290,7 @@ class Generate extends React.Component {
             setTimeout(async () => {
               if (this.state.isImageUploadable) {
                 try {
-                  const res = await fetch('10.100.5.78:8000/api/generate', {
+                  const res = await fetch(process.env.REACT_APP_BASE_URL + 'generate', {
                     method: 'POST',
                     body: formdata,
                   });

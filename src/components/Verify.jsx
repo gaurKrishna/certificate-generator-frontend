@@ -117,7 +117,7 @@ export class Verify extends Component {
                         'id',
                         `${event.target[0].value.toString().trim()}`
                       );
-                      const res = await fetch('10.100.5.78:8000/api/get', {
+                      const res = await fetch(process.env.REACT_APP_BASE_URL + 'get', {
                         method: 'POST',
                         body: test,
                       });
