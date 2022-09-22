@@ -52,14 +52,14 @@ const Certificate = ({ match, location }) => {
               <p className={styles.details}>Certificate:</p>
               <div style={{ height: 1240 }}>
                 <object
-                  data={`https://cert-iiit.ml${state.certificate.file}`}
+                  data={`${state.certificate.file}`}
                   type="application/pdf"
                   width="100%"
                   height="100%"
                 >
                   <p>
                     {'Link '}
-                    <a href={`https://cert-iiit.ml${state.certificate.file}`}>
+                    <a href={`${state.certificate.file}`}>
                       {' to the PDF'}
                     </a>
                   </p>
