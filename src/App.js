@@ -9,6 +9,8 @@ import {
   Verify,
   Certificate,
   Login,
+  ForgotPassword,
+  ResetPassword,
 } from './components';
 
 class App extends React.Component {
@@ -87,6 +89,8 @@ class App extends React.Component {
             <Route path="/login">
               <Login handler={this.handler} islogedIn={this.state.islogedIn} />
             </Route>
+            <Route path="/forgot-password" exact component={ForgotPassword} />
+            <Route path="/reset-password/:uidb64/:token" exact component={ResetPassword} />
             <Route path="/" exact component={() => <Home />} />
           </Switch>
         </BrowserRouter>

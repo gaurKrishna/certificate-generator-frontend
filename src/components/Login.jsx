@@ -5,6 +5,10 @@ import { useHistory } from 'react-router-dom';
 const Login = (props) => {
   const history = useHistory();
 
+  const forgotPasswordHandler = () => {
+    history.push("/forgot-password");
+  }
+
   useEffect(() => {
     if (props.islogedIn) {
       history.push('/');
@@ -51,6 +55,14 @@ const Login = (props) => {
         <Button variant="primary" size="lg" type="submit" className="ml-3">
           Submit
         </Button>
+      </form>
+      <br />
+      <form onSubmit={() => {forgotPasswordHandler()}}>
+        <div>
+            <Button variant="primary" size="lg" type="submit" className="ml-3">
+                Forgot Password?
+            </Button>
+        </div>
       </form>
     </Jumbotron>
   );

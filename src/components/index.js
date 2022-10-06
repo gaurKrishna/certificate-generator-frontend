@@ -5,3 +5,5 @@ export { default as Generate } from './Generate';
 export { default as Verify } from './Verify';
 export { default as Certificate } from './Certificate';
 export { default as Login } from './Login';
+export {default as ForgotPassword} from './ForgotPassword';
+export {default as ResetPassword} from './ResetPassword';

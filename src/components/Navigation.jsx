@@ -49,6 +49,9 @@ class Navigation extends React.Component {
             {this.props.islogedIn ? (
               <Nav.Link href="/generate">Generate Certificates</Nav.Link>
             ) : null}
+            {this.props.islogedIn ? (
+              <Nav.Link href={process.env.REACT_APP_BASE_URL + "admin"}>Admin Panel</Nav.Link>
+            ) : null}
             <Nav.Link href="/verify">Verify Certificates</Nav.Link>
             {this.props.islogedIn? (
               <Nav.Link onClick={this.logout_handler}>Logout</Nav.Link>
