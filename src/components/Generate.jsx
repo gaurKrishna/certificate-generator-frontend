@@ -345,7 +345,14 @@ class Generate extends React.Component {
             <input type="text" name="year" pattern="[0-9]{4}-[0-9]{2}" required />
           </div>
           <div>
-            <label>CSV:</label>
+            <label>
+              CSV: 
+              (
+                <a href='https://docs.google.com/spreadsheets/d/1OZ-0FpFbXchLJdlhet5fjcLlarxarc3oQVuYsLgdlsE/edit?usp=sharing'> inter.csv</a>, 
+                <a href='https://docs.google.com/spreadsheets/d/14u4jP3CCcSIZZ8PFK_nGN2VfgWIEEEpFwIJdGraY8ic/edit?usp=sharing'> intra.csv</a>, 
+                <a href='https://docs.google.com/spreadsheets/d/1qNH3Stew_k7rzc4TQfiFI5wss-4-dOaJRsCxZpoCh5w/edit?usp=sharing'> organizer.csv</a>
+              )
+            </label>
             <br />
             <input type="file" name="csv" accept=".csv" required />
           </div>
