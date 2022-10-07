@@ -45,7 +45,9 @@ class Navigation extends React.Component {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="/">Home</Nav.Link>
+            {this.props.islogedIn ? (
+              <Nav.Link href="/">Home</Nav.Link>
+            ) : null}
             {this.props.islogedIn ? (
               <Nav.Link href="/generate">Generate Certificates</Nav.Link>
             ) : null}
