@@ -29,8 +29,7 @@ const Login = (props) => {
             });
             if (res.status !== 200) throw new Error('Exception message');
             const json = await res.json();
-            // console.log(json);
-            props.handler(json.token, Date.parse(Date(json.expiry)));
+            props.handler(json.token, Date.parse(Date(json.expiry)), json.is_superuser);
           } catch (e) {
             console.log(e);
           }

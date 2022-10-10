@@ -46,13 +46,15 @@ class App extends React.Component {
       }  
   }
 
-  handler(token, cTime) {
+  handler(token, cTime, is_superuser) {
     this.setState({
       loginToken: token,
       islogedIn: true,
+      isSuperuser: is_superuser,
     });
     localStorage.setItem('token', token);
     localStorage.setItem('time', cTime);
+    localStorage.setItem('isSuperuser', is_superuser);
   }
 
   render() {
@@ -70,7 +72,7 @@ class App extends React.Component {
 
     return (
       <>
-        <Navigation islogedIn={this.state.islogedIn} />
+        <Navigation islogedIn={this.state.islogedIn} isSuperuser={this.state.isSuperuser}/>
         <BrowserRouter>
           <Switch>
             <Route path="/generate">

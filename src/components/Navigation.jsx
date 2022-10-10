@@ -16,8 +16,9 @@ class Navigation extends React.Component {
         }
       });
       if (res.status !== 200) throw new Error('Exception message');
-      localStorage.removeItem("token")
-      localStorage.removeItem("time")
+      localStorage.removeItem("token");
+      localStorage.removeItem("time");
+      localStorage.removeItem("isSuperuser");
       window.location.href = '/login'
     }
     catch (e){
@@ -51,7 +52,7 @@ class Navigation extends React.Component {
             {this.props.islogedIn ? (
               <Nav.Link href="/generate">Generate Certificates</Nav.Link>
             ) : null}
-            {this.props.islogedIn ? (
+            {this.props.islogedIn && this.props.isSuperuser ? (
               <Nav.Link href={process.env.REACT_APP_BASE_URL + "admin"}>Admin Panel</Nav.Link>
             ) : null}
             <Nav.Link href="/verify">Verify Certificates</Nav.Link>
