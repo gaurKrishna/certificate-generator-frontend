@@ -52,6 +52,7 @@ class App extends React.Component {
       islogedIn: true,
       isSuperuser: is_superuser,
     });
+    console.log(this.state);
     localStorage.setItem('token', token);
     localStorage.setItem('time', cTime);
     localStorage.setItem('isSuperuser', is_superuser);
